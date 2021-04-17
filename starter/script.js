@@ -14,13 +14,13 @@ const age = 17;
 // if (hasDriversLicense) { console.log("I can drive :D") };
 
 
-// const cutFruitPieces = function (fruit) {
-//   return (fruit * 4);
-// }
-
-function cutFruitPieces(fruit) {
+const cutFruitPieces = function (fruit) {
   return (fruit * 4);
 }
+
+// function cutFruitPieces(fruit) {
+//   return (fruit * 4);
+// }
 
 // function declaration:
 // function fruitProcessor(apples, oranges) {
@@ -38,6 +38,7 @@ const fruitProcessor = function (apples, oranges) {
   return juice  
 };
 
+// arrow function () => {}:
 const fruitProcessors = (apples, oranges) => {
   const applePieces = cutFruitPieces(apples);
   const orangePieces = cutFruitPieces(oranges);
@@ -45,8 +46,26 @@ const fruitProcessors = (apples, oranges) => {
   return juice  
 }
 
-console.log(fruitProcessor);
-console.log(fruitProcessors);
+// console.log(fruitProcessors(2, 6));
 
-console.log(fruitProcessors(2, 5));
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3 
+
+const dolphinsAve = calcAverage(85, 54, 41);
+const koalasAve = calcAverage(363, 34, 27);
+
+// function checkWinner(avgDolphins, avgKoalas) {
+  const checkWinner = function (avgDolphins, avgKoalas) {
+    // console.log(dolphinsAve, koalasAve);
+    if (avgDolphins >= avgKoalas * 2) {
+      console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`)
+    } else if (avgKoalas >= avgDolphins * 2) {
+      console.log(`Koalas win(${avgKoalas} vs. ${avgDolphins})`)
+    } else {
+      console.log("No winner")
+    }
+  }
+// console.log(checkWinner);
+// checkWinner(100, 51);
+checkWinner(dolphinsAve, koalasAve);
+
 
