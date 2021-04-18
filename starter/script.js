@@ -68,4 +68,38 @@ const koalasAve = calcAverage(363, 34, 27);
 // checkWinner(100, 51);
 checkWinner(dolphinsAve, koalasAve);
 
+const friends = ["Michael", "Steven", "Peter"]
+// console.log(friends.includes('Peter'))
+// console.log(friends);
 
+// friends.unshift("Andrew");
+friends.pop();
+// console.log(friends);
+
+const aaa = function addToArray(arrayName, thingToAdd) {
+  arrayName.unshift(thingToAdd);
+  return arrayName.length
+}
+
+// addToArray(friends, "Bob");
+// console.log(friends);
+
+aaa(friends, String(5));
+// console.log(friends);
+// console.log(aaa(friends, "Kim"));
+// console.log(friends)
+// console.log( friends.includes('5') );
+
+const bills = [125, 555, 44];
+
+function calcTip(bill) {
+  // const tip = ( (bill >= 50 && bill <= 300) ? (bill * 15 / 100) : (bill * 20 / 100) );
+  return ( (bill >= 50 && bill <= 300) ? (bill * 15 / 100) : (bill * 20 / 100) );
+  // return tip;
+}
+
+const tips = [ calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2]) ];
+console.log(tips);
+
+const total = [ calcTip(bills[0]) + bills[0], calcTip(bills[1]) + bills[1], calcTip(bills[2]) + bills[2] ];
+console.log(total);
