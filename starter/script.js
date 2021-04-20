@@ -48,10 +48,10 @@ const fruitProcessors = (apples, oranges) => {
 
 // console.log(fruitProcessors(2, 6));
 
-const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3 
+// const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3 
 
-const dolphinsAve = calcAverage(85, 54, 41);
-const koalasAve = calcAverage(363, 34, 27);
+// const dolphinsAve = calcAverage(85, 54, 41);
+// const koalasAve = calcAverage(363, 34, 27);
 
 // function checkWinner(avgDolphins, avgKoalas) {
   const checkWinner = function (avgDolphins, avgKoalas) {
@@ -66,7 +66,7 @@ const koalasAve = calcAverage(363, 34, 27);
   }
 // console.log(checkWinner);
 // checkWinner(100, 51);
-checkWinner(dolphinsAve, koalasAve);
+// checkWinner(dolphinsAve, koalasAve);
 
 const friends = ["Michael", "Steven", "Peter"]
 // console.log(friends.includes('Peter'))
@@ -90,23 +90,23 @@ aaa(friends, String(5));
 // console.log(friends)
 // console.log( friends.includes('5') );
 
-const bills = [125, 555, 44];
+// const bills = [125, 555, 44];
 
-function calcTip(bill) {
-  // const tip = ( (bill >= 50 && bill <= 300) ? (bill * 15 / 100) : (bill * 20 / 100) );
-  return ( (bill >= 50 && bill <= 300) ? (bill * 15 / 100) : (bill * 20 / 100) );
-  // return tip;
-}
+// function calcTip(bill) {
+//   // const tip = ( (bill >= 50 && bill <= 300) ? (bill * 15 / 100) : (bill * 20 / 100) );
+//   return ( (bill >= 50 && bill <= 300) ? (bill * 15 / 100) : (bill * 20 / 100) );
+//   // return tip;
+// }
 
-const tips = [ calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2]) ];
-console.log(tips);
+// const tips = [ calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2]) ];
+// console.log(tips);
 
-const total = [
-  calcTip(bills[0]) + bills[0],
-  calcTip(bills[1]) + bills[1],
-  calcTip(bills[2]) + bills[2]
-];
-console.log(total);
+// const total = [
+//   calcTip(bills[0]) + bills[0],
+//   calcTip(bills[1]) + bills[1],
+//   calcTip(bills[2]) + bills[2]
+// ];
+// console.log(total);
 
 
 // const occupation = 'job'
@@ -240,3 +240,40 @@ while (dice !== 5) {
   console.log(`You rolled ${dice}!`);
   dice = Math.trunc(Math.random() * 10) + 1;
 }
+
+console.log(`----- Code Challenge --------------------------`);
+
+const bills = new Array(22, 295, 176, 440, 37, 105, 10, 1100, 86, 52);
+const tips = [];
+const totals = [];
+
+function calcTip(bill) {
+  return ( (bill >= 50 && bill <= 300) ? (bill * 15 / 100) : (bill * 20 / 100) );
+}
+
+for (let i = 0; i < bills.length; i++) {
+  const eachBill = bills[i]
+  const tip = calcTip(eachBill);  
+  tips.push(tip);
+  totals.push(eachBill + tip);
+}
+
+console.log(tips);
+console.log(totals);
+
+function calcAverage(arr) {
+  let sum = 0;
+  for ( let i = 0; i < arr.length; i++ ) {
+    sum += arr[i];
+  }
+  return ( sum / arr.length );
+  // const average = sum / arr.length;
+  // return average;
+}
+
+console.log(calcAverage(new Array(2, 3, 7)));
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
+
+
+
